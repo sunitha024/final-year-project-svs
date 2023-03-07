@@ -20,8 +20,10 @@ include "connect.php";
           $thirdo = $_POST['thirdo'];
           $thirdp = $_POST['thirdp'];
           $thirdq = $_POST['thirdq'];
+          $thirds = $_POST['thirds'];
+          $thirdz = $_POST['thirdz'];
        
-       $query = " update thirdr set THIRDA='$thirda' , THIRDB='$thirdb' , THIRDC='$thirdc' , THIRDD='$thirdd',THIRDE='$thirde',THIRDF='$thirdf',THIRDG='$thirdg',THIRDH='$thirdh',THIRDI='$thirdi', THIRDJ='$thirdj' ,THIRDK='$thirdk',THIRDL='$thirdl',THIRDM='$thirdm',THIRDN='$thirdn',THIRDO='$thirdo',THIRDP='$thirdp',THIRDQ='$thirdq' where THIRDA='$thirda' " ;
+       $query = " update thirdr set THIRDA='$thirda' , THIRDB='$thirdb' , THIRDC='$thirdc' , THIRDD='$thirdd',THIRDE='$thirde',THIRDF='$thirdf',THIRDG='$thirdg',THIRDH='$thirdh',THIRDI='$thirdi', THIRDJ='$thirdj' ,THIRDK='$thirdk',THIRDL='$thirdl',THIRDM='$thirdm',THIRDN='$thirdn',THIRDO='$thirdo',THIRDP='$thirdp',THIRDQ='$thirdq',THIRDS='$thirds',THIRDZ='$thirdz' where THIRDA='$thirda' " ;
        $stmt = oci_parse($con,$query);
        
        oci_execute($stmt);

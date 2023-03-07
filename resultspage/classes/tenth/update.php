@@ -22,6 +22,8 @@ if (($row = oci_fetch_array($stmt))) {
           $teno = $row['TENO'];
           $tenp = $row['TENP'];
           $tenq = $row['TENQ'];
+          $tens = $row['TENS'];
+          $tenz = $row['TENZ'];
 
 }
 ?>
@@ -34,6 +36,12 @@ if (($row = oci_fetch_array($stmt))) {
     <script src="https://cdn.tailwindcss.com"></script>
     <title> Marks details</title>
     <style>
+      body 
+       {
+         background-color: #1e293b;
+         color: white;
+        
+       }
         a:hover {
             text-decoration: none
         }
@@ -88,22 +96,7 @@ if (($row = oci_fetch_array($stmt))) {
 </head>
 
 <body>
-    <div class="navbar shadow-lg shadow-gray-600 rounded-b-[20px] bg-gradient-to-r to-amber-50 via-yellow-50 from-blue-100 backdrop-blur-lg flex flex-col xs:flex-row justify-center xs:gap-4  md:p-4 items-center z-50">
-        <div class="items-center flex">
-          <img src="../logo.png" class="img aspect-square w-[70px] md:w-[100px] max-w-[100px]" alt="logo" />
-        </div>
-        <div class="flex justify-center flex-col items-center py-2">
-          <h1 class=" text-2xl font-bold md:text-5xl text-gray-800 font-['Open_Sans']">SREE VIDYA SCHOOL</h1>
     
-          <h2 class="h2 text-red-600 text-center font-['Open_Sans'] md:text-left md:text-2xl font-bold text-xs">
-            Nursery to 10th Class(Recognised by Govt. of A.P)
-          </h2>
-    
-          <h3 class="h3 text-[#3d3266] tracking-wider font-['Open_Sans'] text-center md:text-left font-bold md:text-xl text-xs">
-            Kommadhi Marikavalasa Padalapeta
-          </h3>
-        </div>
-      </div>
   
     <div class="container my-5 ">
         
@@ -111,82 +104,139 @@ if (($row = oci_fetch_array($stmt))) {
 
         <form method="POST" action="updater.php" class="grid md:grid-cols-2 lg:grid-cols-3 justify-center gap-2  mx-auto max-w-[1000px] text-center">
             
+            <div class="form-group ">
+                <label ><h5 class="text-xl text-center">S.NO</h5></label>
+                <div class="flex flex-cols-3">
+                <input type="text" class="form-control font-bold text-black text-center h-10" size="2" placeholder="Enter ID" name="tena" value="<?php echo $tena ?>" required>
+                
+                </div>
+            </div>
+            <div class="form-group ">
+                <label ><h5 class="text-xl text-center">Id</h5></label>
+                <div class="flex flex-cols-3">
+                <input type="text" class="form-control font-bold text-black text-center h-10" size="2" placeholder="Enter ID" name="tenb" value="<?php echo $tenb ?>" required>
+                
+                </div>
+            </div>
             <div class="form-group">
-                <label>
-                    <h5 class="text-center text-violet-800 text-lg font-bold">Select Subject</h5>
-                </label>
-                <input  type="text" class="form-control font-bold"  name="tena" value="<?php echo $tena ?>" readonly>
-                    
-                
+                <label><h5 class="text-xl">Select Subject</h5></label>
+                <!-- <input type="text" class="form-control" placeholder="Enter Your JobId" name="tena"  required> -->
+                <select type="text" class="form-control text-center font-bold text-black" placeholder="Enter the subjectcode" name="tenc" value="<?php echo $tenc ?>">
+                        
+                        <?php if ($tenc == "TELUGU") { ?>
+                        <option selected="selected">TEUGU</option>
+                    <?php } else { ?>
+                        <option>TELUGU</option>
+                    <?php }
+                    ?>
+
+                    <?php if ($tenc == "HINDI") { ?>
+                        <option selected="selected">HINDI</option>
+                    <?php } else { ?>
+                        <option>HINDI</option>
+                    <?php }
+                    ?>
+                    <?php if ($tenc == "ENGLISH") { ?>
+                        <option selected="selected">ENGLISH</option>
+                    <?php } else { ?>
+                        <option>ENGLISH</option>
+                    <?php }
+                    ?>
+                    <?php if ($tenc == "MATHEMATICS") { ?>
+                        <option selected="selected">MATHEMATICS</option>
+                    <?php } else { ?>
+                        <option>MATHEMATICS</option>
+                    <?php }
+                    ?>
+                    <?php if ($tenc == "BIOLOGY") { ?>
+                        <option selected="selected">BIOLOGY</option>
+                    <?php } else { ?>
+                        <option>BIOLOGY</option>
+                    <?php }
+                    ?>
+                    <?php if ($tenc == "PHYSICS") { ?>
+                        <option selected="selected">PHYSICS</option>
+                    <?php } else { ?>
+                        <option>PHYSICS</option>
+                    <?php }
+                    ?>
+                    <?php if ($tenc == "SOCIAL") { ?>
+                        <option selected="selected">SOCIAL</option>
+                    <?php } else { ?>
+                        <option>SOCIAL</option>
+                    <?php }
+                    ?>
+                </select>
             </div>
             <div class="form-group  ">
-                <label ><h5 class=" text-center text-violet-800 text-lg font-bold">FA-1</h5></label>
+                <label ><h5 class=" text-center text-violet-100 text-lg font-bold">FA-1</h5></label>
                 <div class="flex md:flex flex-cols-3">
-                <input type="text" class="form-control text-center w-24 h-10"  placeholder="E(20M)" name="tenb" value="<?php echo $tenb ?>" >
-                <input type="text" class="form-control text-center w-24 h-10"  placeholder="I(30M)" name="tenc" value="<?php echo $tenc ?>" >
-                <input type="text" class="form-control text-center w-24 h-10"  placeholder="E+I(50M)" name="tend" value="<?php echo $tend ?>"  >
+                <input type="text" class="form-control font-bold text-black text-center w-24 h-10"  placeholder="E(20M)" name="tend" value="<?php echo $tend ?>" >
+                <input type="text" class="form-control font-bold text-black text-center w-24 h-10"  placeholder="I(30M)" name="tene" value="<?php echo $tene ?>" >
+                <input type="text" class="form-control font-bold text-black text-center w-24 h-10"  placeholder="E+I(50M)" name="tenf" value="<?php echo $tenf ?>" readonly >
                 </div>
             </div>
             <div class="form-group ">
-                <label ><h5 class="text-center text-violet-800 text-lg font-bold">FA-2</h5></label>
+                <label ><h5 class="text-center text-violet-100 text-lg font-bold">FA-2</h5></label>
                 <div class="flex md:flex flex-cols-3">
-                <input type="text" class="form-control text-center w-24 h-10"  placeholder="E(20M)" name="tene" value="<?php echo $tene ?>" >
-                <input type="text" class="form-control text-center w-24 h-10"  placeholder="I(30M)" name="tenf" value="<?php echo $tenf ?>" >
-                <input type="text" class="form-control text-center w-24 h-10"  placeholder="E+I(50M)" name="teng" value="<?php echo $teng ?>" >
+                <input type="text" class="form-control font-bold text-black text-center w-24 h-10"  placeholder="E(20M)" name="teng" value="<?php echo $teng ?>" >
+                <input type="text" class="form-control font-bold text-black text-center w-24 h-10"  placeholder="I(30M)" name="tenh" value="<?php echo $tenh ?>" >
+                <input type="text" class="form-control font-bold text-black text-center w-24 h-10"  placeholder="E+I(50M)" name="teni" value="<?php echo $teni ?>" readonly>
                 </div>
             </div>
             <div class="form-group ">
-                <label ><h5 class="text-center text-violet-800 text-lg font-bold">SA-1</h5></label>
+                <label ><h5 class="text-center text-violet-100 text-lg font-bold">SA-1</h5></label>
                 <div class="flex flex-cols-3">
-                <input type="text" class="form-control text-center h-10"  placeholder="100M" name="tenh" value="<?php echo $tenh ?>" >
+                <input type="text" class="form-control font-bold text-black text-center h-10"  placeholder="100M" name="tenj" value="<?php echo $tenj ?>" >
                 
                 </div>
             </div>
             <div class="form-group  ">
-                <label ><h5 class="text-center text-violet-800 text-lg font-bold">FA-3</h5></label>
+                <label ><h5 class="text-center text-violet-100 text-lg font-bold">FA-3</h5></label>
                 <div class="flex md:flex flex-cols-3">
-                <input type="text" class="form-control text-center w-24 h-10"  placeholder="E(20M)" name="teni" value="<?php echo $teni ?>" >
-                <input type="text" class="form-control text-center w-24 h-10"  placeholder="I(30M)" name="tenj" value="<?php echo $tenj ?>" >
-                <input type="text" class="form-control text-center w-24 h-10"  placeholder="E+I(50M)" name="tenk" value="<?php echo $tenk ?>" >
+                <input type="text" class="form-control font-bold text-black text-center w-24 h-10"  placeholder="E(20M)" name="tenk" value="<?php echo $tenk ?>" >
+                <input type="text" class="form-control font-bold text-black text-center w-24 h-10"  placeholder="I(30M)" name="tenl" value="<?php echo $tenl ?>" >
+                <input type="text" class="form-control font-bold text-black text-center w-24 h-10"  placeholder="E+I(50M)" name="tenm" value="<?php echo $tenm ?>" readonly>
                 </div>
             </div>
             <div class="form-group ">
-                <label ><h5 class="text-center text-violet-800 text-lg font-bold">FA-4</h5></label>
+                <label ><h5 class="text-center text-violet-100 text-lg font-bold">FA-4</h5></label>
                 <div class="flex md:flex flex-cols-3">
-                <input type="text" class="form-control text-center  w-24 h-10"  placeholder="E(20M)" name="tenl" value="<?php echo $tenl ?>" >
-                <input type="text" class="form-control text-center  w-24 h-10"  placeholder="I(30M)" name="tenm" value="<?php echo $tenm ?>" >
-                <input type="text" class="form-control text-center  w-24 h-10"  placeholder="E+I(50M)" name="tenn" value="<?php echo $tenn ?>" >
+                <input type="text" class="form-control font-bold text-black text-center  w-24 h-10"  placeholder="E(20M)" name="tenn" value="<?php echo $tenn ?>" >
+                <input type="text" class="form-control font-bold text-black text-center  w-24 h-10"  placeholder="I(30M)" name="teno" value="<?php echo $teno ?>" >
+                <input type="text" class="form-control font-bold text-black text-center  w-24 h-10"  placeholder="E+I(50M)" name="tenp" value="<?php echo $tenp ?>" readonly>
                 </div>
             </div>
             <div class="form-group ">
-                <label ><h5 class="text-center text-violet-800 text-lg font-bold">SA-2</h5></label>
+                <label ><h5 class="text-center text-violet-100 text-lg font-bold">SA-2</h5></label>
                 <div class="flex flex-cols-3">
-                <input type="text" class="form-control text-center h-10"  placeholder="100M" name="teno" value="<?php echo $teno ?>" >
+                <input type="text" class="form-control font-bold text-black text-center h-10"  placeholder="100M" name="tenq" value="<?php echo $tenq ?>" >
                 
                 </div>
             </div>
             <div class="form-group ">
-                <label ><h5 class="text-center text-violet-800 text-lg font-bold">S_TOTAL</h5></label>
+                <label ><h5 class="text-center text-violet-100 text-lg font-bold">S_TOTAL</h5></label>
                 <div class="flex flex-cols-3">
-                <input type="text" class="form-control text-center h-10"  placeholder="S-TOTAL" name="tenp" value="<?php echo $tenp ?>" >
+                <input type="text" class="form-control font-bold text-black text-center h-10"  placeholder="S-TOTAL" name="tens" value="<?php echo $tens ?>" readonly>
                 
                 </div>
             </div>
             <div class="form-group ">
-                <label ><h5 class="text-center text-violet-800 text-lg font-bold">PERCENTAGE</h5></label>
+                <label ><h5 class="text-center text-violet-100 text-lg font-bold">PERCENTAGE</h5></label>
                 <div class="flex flex-cols-3">
-                <input type="text" class="form-control text-center h-10" size="2" placeholder="PERCENTAGE" name="tenq" value="<?php echo $tenq ?>">
+                <input type="text" class="form-control font-bold text-black text-center h-10" size="2" placeholder="PERCENTAGE" name="tenz" value="<?php echo $tenz ?>" readonly>
                 
                 </div>
-            </div>
+            </div><br>
             
             
-            <div class="ml-20 mt-2 bg-violet-500 text-2xl font-semibold p-2 md:p-4 w-40 md:ml-[25%] rounded-md hover:bg-emerald-600  text-zinc-100">
+            
+            <div class="ml-20 mt-6 bg-emerald-500  text-black text-2xl text-center font-semibold p-2 md:p-5 w-40 md:ml-[15%] rounded-md hover:bg-violet-600 hover:text-white  ">
                 <button type="submit" name="update">
-                    update
+                   update
                 </button>
             </div>
-        </form>
+          </form>
     </div>
 
 

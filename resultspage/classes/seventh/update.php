@@ -22,6 +22,8 @@ if (($row = oci_fetch_array($stmt))) {
           $seveno = $row['SEVENO'];
           $sevenp = $row['SEVENP'];
           $sevenq = $row['SEVENQ'];
+          $sevens = $row['SEVENS'];
+          $sevenz = $row['SEVENZ'];
 
 }
 ?>
@@ -34,6 +36,13 @@ if (($row = oci_fetch_array($stmt))) {
     <script src="https://cdn.tailwindcss.com"></script>
     <title> Marks details</title>
     <style>
+       body 
+       {
+         background-color: #1e293b;
+         color: white;
+        
+       }
+       
         a:hover {
             text-decoration: none
         }
@@ -88,108 +97,148 @@ if (($row = oci_fetch_array($stmt))) {
 </head>
 
 <body>
-    <div class="navbar shadow-lg shadow-gray-600 rounded-b-[20px] bg-gradient-to-r to-amber-50 via-yellow-50 from-blue-100 backdrop-blur-lg flex flex-col xs:flex-row justify-center xs:gap-4  md:p-4 items-center z-50">
-        <div class="items-center flex">
-          <img src="../logo.png" class="img aspect-square w-[70px] md:w-[100px] max-w-[100px]" alt="logo" />
-        </div>
-        <div class="flex justify-center flex-col items-center py-2">
-          <h1 class=" text-2xl font-bold md:text-5xl text-gray-800 font-['Open_Sans']">SREE VIDYA SCHOOL</h1>
     
-          <h2 class="h2 text-red-600 text-center font-['Open_Sans'] md:text-left md:text-2xl font-bold text-xs">
-            Nursery to 10th Class(Recognised by Govt. of A.P)
-          </h2>
-    
-          <h3 class="h3 text-[#3d3266] tracking-wider font-['Open_Sans'] text-center md:text-left font-bold md:text-xl text-xs">
-            Kommadhi Marikavalasa Padalapeta
-          </h3>
-        </div>
-      </div>
   
-    <div class="container my-5 ">
+<div class="container my-5 ">
         
         <h2 class="text-2xl text-center my-3 md:my-28 md:text-4xl font-bold "> Update Marks</h2><br>
 
         <form method="POST" action="updater.php" class="grid md:grid-cols-2 lg:grid-cols-3 justify-center gap-2  mx-auto max-w-[1000px] text-center">
             
+            <div class="form-group ">
+                <label ><h5 class="text-xl text-center">S.NO</h5></label>
+                <div class="flex flex-cols-3">
+                <input type="text" class="form-control font-bold text-black text-center h-10" size="2" placeholder="Enter ID" name="sevena" value="<?php echo $sevena ?>" required>
+                
+                </div>
+            </div>
+            <div class="form-group ">
+                <label ><h5 class="text-xl text-center">Id</h5></label>
+                <div class="flex flex-cols-3">
+                <input type="text" class="form-control font-bold text-black text-center h-10" size="2" placeholder="Enter ID" name="sevenb" value="<?php echo $sevenb ?>" required>
+                
+                </div>
+            </div>
             <div class="form-group">
-                <label>
-                    <h5 class="text-center text-violet-800 text-lg font-bold">Select Subject</h5>
-                </label>
-                
-                <input  type="text" class="form-control font-bold"  name="sevena" value="<?php echo $sevena ?>" readonly>
-                    
-                
+                <label><h5 class="text-xl">Select Subject</h5></label>
+                <!-- <input type="text" class="form-control" placeholder="Enter Your JobId" name="tena"  required> -->
+                <select type="text" class="form-control text-center font-bold text-black" placeholder="Enter the subjectcode" name="sevenc" value="<?php echo $sevenc ?>">
+                        
+                        <?php if ($sevenc == "TELUGU") { ?>
+                        <option selected="selected">TEUGU</option>
+                    <?php } else { ?>
+                        <option>TELUGU</option>
+                    <?php }
+                    ?>
+
+                    <?php if ($sevenc == "HINDI") { ?>
+                        <option selected="selected">HINDI</option>
+                    <?php } else { ?>
+                        <option>HINDI</option>
+                    <?php }
+                    ?>
+                    <?php if ($sevenc == "ENGLISH") { ?>
+                        <option selected="selected">ENGLISH</option>
+                    <?php } else { ?>
+                        <option>ENGLISH</option>
+                    <?php }
+                    ?>
+                    <?php if ($sevenc == "MATHEMATICS") { ?>
+                        <option selected="selected">MATHEMATICS</option>
+                    <?php } else { ?>
+                        <option>MATHEMATICS</option>
+                    <?php }
+                    ?>
+                    <?php if ($sevenc == "BIOLOGY") { ?>
+                        <option selected="selected">BIOLOGY</option>
+                    <?php } else { ?>
+                        <option>BIOLOGY</option>
+                    <?php }
+                    ?>
+                    <?php if ($sevenc == "PHYSICS") { ?>
+                        <option selected="selected">PHYSICS</option>
+                    <?php } else { ?>
+                        <option>PHYSICS</option>
+                    <?php }
+                    ?>
+                    <?php if ($sevenc == "SOCIAL") { ?>
+                        <option selected="selected">SOCIAL</option>
+                    <?php } else { ?>
+                        <option>SOCIAL</option>
+                    <?php }
+                    ?>
+                </select>
             </div>
             <div class="form-group  ">
-                <label ><h5 class=" text-center text-violet-800 text-lg font-bold">FA-1</h5></label>
+                <label ><h5 class=" text-center text-violet-100 text-lg font-bold">FA-1</h5></label>
                 <div class="flex md:flex flex-cols-3">
-                <input type="text" class="form-control text-center w-24 h-10"  placeholder="E(20M)" name="sevenb" value="<?php echo $sevenb ?>" >
-                <input type="text" class="form-control text-center w-24 h-10"  placeholder="I(30M)" name="sevenc" value="<?php echo $sevenc ?>" >
-                <input type="text" class="form-control text-center w-24 h-10"  placeholder="E+I(50M)" name="sevend" value="<?php echo $sevend ?>"  >
+                <input type="text" class="form-control font-bold text-black text-center w-24 h-10"  placeholder="E(20M)" name="sevend" value="<?php echo $sevend ?>" >
+                <input type="text" class="form-control font-bold text-black text-center w-24 h-10"  placeholder="I(30M)" name="sevene" value="<?php echo $sevene ?>" >
+                <input type="text" class="form-control font-bold text-black text-center w-24 h-10"  placeholder="E+I(50M)" name="sevenf" value="<?php echo $sevenf ?>" readonly >
                 </div>
             </div>
             <div class="form-group ">
-                <label ><h5 class="text-center text-violet-800 text-lg font-bold">FA-2</h5></label>
+                <label ><h5 class="text-center text-violet-100 text-lg font-bold">FA-2</h5></label>
                 <div class="flex md:flex flex-cols-3">
-                <input type="text" class="form-control text-center w-24 h-10"  placeholder="E(20M)" name="sevene" value="<?php echo $sevene ?>" >
-                <input type="text" class="form-control text-center w-24 h-10"  placeholder="I(30M)" name="sevenf" value="<?php echo $sevenf ?>" >
-                <input type="text" class="form-control text-center w-24 h-10"  placeholder="E+I(50M)" name="seveng" value="<?php echo $seveng ?>" >
+                <input type="text" class="form-control font-bold text-black text-center w-24 h-10"  placeholder="E(20M)" name="seveng" value="<?php echo $seveng ?>" >
+                <input type="text" class="form-control font-bold text-black text-center w-24 h-10"  placeholder="I(30M)" name="sevenh" value="<?php echo $sevenh ?>" >
+                <input type="text" class="form-control font-bold text-black text-center w-24 h-10"  placeholder="E+I(50M)" name="seveni" value="<?php echo $seveni ?>" readonly>
                 </div>
             </div>
             <div class="form-group ">
-                <label ><h5 class="text-center text-violet-800 text-lg font-bold">SA-1</h5></label>
+                <label ><h5 class="text-center text-violet-100 text-lg font-bold">SA-1</h5></label>
                 <div class="flex flex-cols-3">
-                <input type="text" class="form-control text-center h-10"  placeholder="100M" name="sevenh" value="<?php echo $sevenh ?>" >
+                <input type="text" class="form-control font-bold text-black text-center h-10"  placeholder="100M" name="sevenj" value="<?php echo $sevenj ?>" >
                 
                 </div>
             </div>
             <div class="form-group  ">
-                <label ><h5 class="text-center text-violet-800 text-lg font-bold">FA-3</h5></label>
+                <label ><h5 class="text-center text-violet-100 text-lg font-bold">FA-3</h5></label>
                 <div class="flex md:flex flex-cols-3">
-                <input type="text" class="form-control text-center w-24 h-10"  placeholder="E(20M)" name="seveni" value="<?php echo $seveni ?>" >
-                <input type="text" class="form-control text-center w-24 h-10"  placeholder="I(30M)" name="sevenj" value="<?php echo $sevenj ?>" >
-                <input type="text" class="form-control text-center w-24 h-10"  placeholder="E+I(50M)" name="sevenk" value="<?php echo $sevenk ?>" >
+                <input type="text" class="form-control font-bold text-black text-center w-24 h-10"  placeholder="E(20M)" name="sevenk" value="<?php echo $sevenk ?>" >
+                <input type="text" class="form-control font-bold text-black text-center w-24 h-10"  placeholder="I(30M)" name="sevenl" value="<?php echo $sevenl ?>" >
+                <input type="text" class="form-control font-bold text-black text-center w-24 h-10"  placeholder="E+I(50M)" name="sevenm" value="<?php echo $sevenm ?>" readonly>
                 </div>
             </div>
             <div class="form-group ">
-                <label ><h5 class="text-center text-violet-800 text-lg font-bold">FA-4</h5></label>
+                <label ><h5 class="text-center text-violet-100 text-lg font-bold">FA-4</h5></label>
                 <div class="flex md:flex flex-cols-3">
-                <input type="text" class="form-control text-center  w-24 h-10"  placeholder="E(20M)" name="sevenl" value="<?php echo $sevenl ?>" >
-                <input type="text" class="form-control text-center  w-24 h-10"  placeholder="I(30M)" name="sevenm" value="<?php echo $sevenm ?>" >
-                <input type="text" class="form-control text-center  w-24 h-10"  placeholder="E+I(50M)" name="sevenn" value="<?php echo $sevenn ?>" >
+                <input type="text" class="form-control font-bold text-black text-center  w-24 h-10"  placeholder="E(20M)" name="sevenn" value="<?php echo $sevenn ?>" >
+                <input type="text" class="form-control font-bold text-black text-center  w-24 h-10"  placeholder="I(30M)" name="seveno" value="<?php echo $seveno ?>" >
+                <input type="text" class="form-control font-bold text-black text-center  w-24 h-10"  placeholder="E+I(50M)" name="sevenp" value="<?php echo $sevenp ?>" readonly>
                 </div>
             </div>
             <div class="form-group ">
-                <label ><h5 class="text-center text-violet-800 text-lg font-bold">SA-2</h5></label>
+                <label ><h5 class="text-center text-violet-100 text-lg font-bold">SA-2</h5></label>
                 <div class="flex flex-cols-3">
-                <input type="text" class="form-control text-center h-10"  placeholder="100M" name="seveno" value="<?php echo $seveno ?>" >
+                <input type="text" class="form-control font-bold text-black text-center h-10"  placeholder="100M" name="sevenq" value="<?php echo $sevenq ?>" >
                 
                 </div>
             </div>
             <div class="form-group ">
-                <label ><h5 class="text-center text-violet-800 text-lg font-bold">S_TOTAL</h5></label>
+                <label ><h5 class="text-center text-violet-100 text-lg font-bold">S_TOTAL</h5></label>
                 <div class="flex flex-cols-3">
-                <input type="text" class="form-control text-center h-10"  placeholder="S-TOTAL" name="sevenp" value="<?php echo $sevenp ?>" >
+                <input type="text" class="form-control font-bold text-black text-center h-10"  placeholder="S-TOTAL" name="sevens" value="<?php echo $sevens ?>" readonly >
                 
                 </div>
             </div>
             <div class="form-group ">
-                <label ><h5 class="text-center text-violet-800 text-lg font-bold">PERCENTAGE</h5></label>
+                <label ><h5 class="text-center text-violet-100 text-lg font-bold">PERCENTAGE</h5></label>
                 <div class="flex flex-cols-3">
-                <input type="text" class="form-control text-center h-10" size="2" placeholder="PERCENTAGE" name="sevenq" value="<?php echo $sevenq ?>">
+                <input type="text" class="form-control font-bold text-black text-center h-10" size="2" placeholder="PERCENTAGE" name="sevenz" value="<?php echo $sevenz ?>" readonly>
                 
                 </div>
-            </div>
+            </div><br>
             
             
-            <div class="ml-20 mt-2 bg-violet-500 text-2xl font-semibold p-2 md:p-4 w-40 md:ml-[25%] rounded-md hover:bg-emerald-600  text-zinc-100">
+            
+            <div class="ml-20 mt-6 bg-emerald-500  text-black text-2xl text-center font-semibold p-2 md:p-5 w-40 md:ml-[15%] rounded-md hover:bg-violet-600 hover:text-white  ">
                 <button type="submit" name="update">
-                    update
+                   update
                 </button>
             </div>
-        </form>
+          </form>
     </div>
-
 
 
 

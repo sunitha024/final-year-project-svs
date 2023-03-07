@@ -20,8 +20,10 @@ include "connect.php";
           $fouro = $_POST['fouro'];
           $fourp = $_POST['fourp'];
           $fourq = $_POST['fourq'];
+          $fours = $_POST['fours'];
+          $fourz = $_POST['fourz'];
        
-       $query = " update fourr set FOURA='$foura' , FOURB='$fourb' , FOURC='$fourc' , FOURD='$fourd',FOURE='$foure',FOURF='$fourf',FOURG='$fourg',FOURH='$fourh',FOURI='$fouri', FOURJ='$fourj' ,FOURK='$fourk',FOURL='$fourixl',FOURM='$fourm',FOURN='$fourn',FOURO='$fouro',FOURP='$fourp',FOURQ='$fourq' where FOURA='$foura' " ;
+       $query = " update fourthr set FOURA='$foura' , FOURB='$fourb' , FOURC='$fourc' , FOURD='$fourd',FOURE='$foure',FOURF='$fourf',FOURG='$fourg',FOURH='$fourh',FOURI='$fouri', FOURJ='$fourj' ,FOURK='$fourk',FOURL='$fourl',FOURM='$fourm',FOURN='$fourn',FOURO='$fouro',FOURP='$fourp',FOURQ='$fourq',FOURS='$fours',FOURZ='$fourz' where FOURA='$foura' " ;
        $stmt = oci_parse($con,$query);
        
        oci_execute($stmt);

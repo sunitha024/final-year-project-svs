@@ -20,8 +20,10 @@ include "connect.php";
           $seveno = $_POST['seveno'];
           $sevenp = $_POST['sevenp'];
           $sevenq = $_POST['sevenq'];
+          $sevens = $_POST['sevens'];
+          $sevenz = $_POST['sevenz'];
        
-       $query = " update sevenr set SEVENA='$sevena' , SEVENB='$sevenb' , SEVENC='$sevenc' , SEVEND='$sevend',SEVENE='$sevene',SEVENF='$sevenf',SEVENG='$seveng',SEVENH='$sevenh',SEVENI='$seveni', SEVENJ='$sevenj' ,SEVENK='$sevenk',SEVENL='$sevenl',SEVENM='$sevenm',SEVENN='$sevenn',SEVENO='$seveno',SEVENP='$sevenp',SEVENQ='$sevenq' where SEVENA='$sevena' " ;
+       $query = " update sevenr set SEVENA='$sevena' , SEVENB='$sevenb' , SEVENC='$sevenc' , SEVEND='$sevend',SEVENE='$sevene',SEVENF='$sevenf',SEVENG='$seveng',SEVENH='$sevenh',SEVENI='$seveni', SEVENJ='$sevenj' ,SEVENK='$sevenk',SEVENL='$sevenl',SEVENM='$sevenm',SEVENN='$sevenn',SEVENO='$seveno',SEVENP='$sevenp',SEVENQ='$sevenq',SEVENS='$sevens',SEVENZ='$sevenz' where SEVENA='$sevena' " ;
        $stmt = oci_parse($con,$query);
        
        oci_execute($stmt);

@@ -4,31 +4,33 @@
     if(isset($_POST['submit']))
     {
     
-          $sixa = $_POST['sixa'];
-          $sixb = $_POST['sixb'];
-          $sixc = $_POST['sixc'];
-          $sixd = $_POST['sixd'];
-          $sixe = $_POST['sixe'];
-          $sixf = $_POST['sixf'];
-          $sixg = $_POST['sixg'];
-          $sixh = $_POST['sixh'];
-          $sixi = $_POST['sixi'];
-          $sixj = $_POST['sixj'];
-          $sixk = $_POST['sixk'];
-          $sixl = $_POST['sixl'];
-          $sixm = $_POST['sixm'];
-          $sixn = $_POST['sixn'];
-          $sixo = $_POST['sixo'];
-          $sixp = $_POST['sixp'];
-          $sixq = $_POST['sixq']; 
+          $fivea = $_POST['fivea'];
+          $fiveb = $_POST['fiveb'];
+          $fivec = $_POST['fivec'];
+          $fived = $_POST['fived'];
+          $fivee = $_POST['fivee'];
+          $fivef = $_POST['fivef'];
+          $fiveg = $_POST['fiveg'];
+          $fiveh = $_POST['fiveh'];
+          $fivei = $_POST['fivei'];
+          $fivej = $_POST['fivej'];
+          $fivek = $_POST['fivek'];
+          $fivel = $_POST['fivel'];
+          $fivem = $_POST['fivem'];
+          $fiven = $_POST['fiven'];
+          $fiveo = $_POST['fiveo'];
+          $fivep = $_POST['fivep'];
+          $fiveq = $_POST['fiveq']; 
+          $fives = $_POST['fives'];
+          $fivez = $_POST['fivez']; 
         
-        $query="INSERT INTO sixr (SIXA,SIXB,SIXC,SIXD,SIXE,SIXF,SIXG,SIXH,SIXI,SIXJ,SIXK,SIXL,SIXM,SIXN,SIXO,SIXP,SIXQ) VALUES('$sixa','$sixb','$sixc','$sixd','$sixe','$sixf','$sixg','$sixh','$sixi','$sixj','$sixk','$sixl','$sixm','$sixn','$sixo','$sixp','$sixq')";
+        $query="INSERT INTO fiver (FIVEA,FIVEB,FIVEC,FIVED,FIVEE,FIVEF,FIVEG,FIVEH,FIVEI,FIVEJ,FIVEK,FIVEL,FIVEM,FIVEN,FIVEO,FIVEP,FIVEQ,FIVES,FIVEZ) VALUES('$fivea','$fiveb','$fivec','$fived','$fivee','$fivef','$fiveg','$fiveh','$fivei','$fivej','$fivek','$fivel','$fivem','$fiven','$fiveo','$fivep','$fiveq','$fives','$fivez')";
         $stmt=oci_parse($con,$query);
         oci_execute($stmt);
     
         if($stmt)
         {
-            header("location:sixth.php");
+            header("location:fifth.php");
         }
         else
         {
@@ -45,7 +47,13 @@
     <script src="https://cdn.tailwindcss.com"></script>
 
     <title> Results details</title>
-    <style> 
+    <style>
+       body 
+       {
+         background-color: #1e293b;
+         color: white;
+        
+       } 
         a:hover{ text-decoration:none} 
         .form-control
         {
@@ -96,87 +104,100 @@
 
 </head>
 <body>
-    <div class="container my-5 ">
+<div class="container my-5 ">
     <h2 class="text-2xl text-center my-2 md:my-28 md:text-4xl  "> POST_MARKS OF A STUDENT</h2><br><br>
         <form method="POST" class="grid md:grid-cols-2 lg:grid-cols-3 justify-center gap-8  mx-auto max-w-[1000px] text-center">
+            <div class="form-group ">
+                <label ><h5 class="text-xl text-center">S.no</h5></label>
+                <div class="flex flex-cols-3">
+                <input type="text" class="form-control font-bold text-black text-center h-10" size="2" placeholder="Enter ID" name="fivea" required>
+                
+                </div>
+            </div>
+            <div class="form-group ">
+                <label ><h5 class="text-xl text-center">Id</h5></label>
+                <div class="flex flex-cols-3">
+                <input type="text" class="form-control font-bold text-black text-center h-10" size="2" placeholder="Enter ID" name="fiveb" required>
+                
+                </div>
+            </div>
             <div class="form-group">
-                <label><h5 class="text-xl">Select Day</h5></label>
+                <label><h5 class="text-xl">Select Subject</h5></label>
                 <!-- <input type="text" class="form-control" placeholder="Enter Your JobId" name="tena"  required> -->
-                <select type="text" class="form-control" placeholder="Enter the subjectcode" name="sixa" required readonly>
+                <select type="text" class="form-control font-bold text-black" placeholder="Enter the subjectcode" name="fivec" required >
                         <option>TELUGU</option>
                         <option>HINDI</option>
                         <option>ENGLISH</option>
                         <option>MATHEMATICS</option>
-                        <option>SCIENCE</option>
+                        <option>BIOLOGY</option>
+                        <option>PHYSICS</option>
                         <option>SOCIAL</option>
                 </select>
             </div>
             <div class="form-group  ">
                 <label ><h5 class="text-xl text-center">FA-1</h5></label>
                 <div class="flex flex-cols-3">
-                <input type="text" class="form-control text-center h-10" size="2" placeholder="E(20M)" name="sixb" required>
-                <input type="text" class="form-control text-center h-10" size="2" placeholder="I(30M)" name="sixc" required>
-                <input type="text" class="form-control text-center h-10" size="2" placeholder="E+I(50M)" name="sixd" required>
+                <input type="text" class="form-control font-bold text-black text-center h-10" size="2" placeholder="E(20M)" name="fived" >
+                <input type="text" class="form-control font-bold text-black text-center h-10" size="2" placeholder="I(30M)" name="fivee" >
+                <input type="text" class="form-control font-bold text-black text-center h-10" size="2" placeholder="E+I(50M)" name="fivef" readonly>
                 </div>
             </div>
             <div class="form-group ">
                 <label ><h5 class="text-xl text-center">FA-2</h5></label>
                 <div class="flex flex-cols-3">
-                <input type="text" class="form-control text-center h-10" size="2" placeholder="E(20M)" name="sixe" required>
-                <input type="text" class="form-control text-center h-10" size="2" placeholder="I(30M)" name="sixf" required>
-                <input type="text" class="form-control text-center h-10" size="2" placeholder="E+I(50M)" name="sixg" required>
+                <input type="text" class="form-control font-bold text-black text-center h-10" size="2" placeholder="E(20M)" name="fiveg" >
+                <input type="text" class="form-control font-bold text-black text-center h-10" size="2" placeholder="I(30M)" name="fiveh" >
+                <input type="text" class="form-control font-bold text-black text-center h-10" size="2" placeholder="E+I(50M)" name="fivei" readonly>
                 </div>
             </div>
             <div class="form-group ">
                 <label ><h5 class="text-xl text-center">SA-1</h5></label>
                 <div class="flex flex-cols-3">
-                <input type="text" class="form-control text-center h-10" size="2" placeholder="100M" name="sixh" required>
+                <input type="text" class="form-control font-bold text-black text-center h-10" size="2" placeholder="100M" name="fivej" >
                 
                 </div>
             </div>
             <div class="form-group  ">
                 <label ><h5 class="text-xl text-center">FA-3</h5></label>
                 <div class="flex flex-cols-3">
-                <input type="text" class="form-control text-center h-10" size="2" placeholder="E(20M)" name="sixi" required>
-                <input type="text" class="form-control text-center h-10" size="2" placeholder="I(30M)" name="sixj" required>
-                <input type="text" class="form-control text-center h-10" size="2" placeholder="E+I(50M)" name="sixk" required>
+                <input type="text" class="form-control  font-bold text-black text-center h-10" size="2" placeholder="E(20M)" name="fivek">
+                <input type="text" class="form-control  font-bold text-black text-center h-10" size="2" placeholder="I(30M)" name="fivel" >
+                <input type="text" class="form-control  font-bold text-black text-center h-10" size="2" placeholder="E+I(50M)" name="fivem" readonly>
                 </div>
             </div>
             <div class="form-group ">
                 <label ><h5 class="text-xl text-center">FA-4</h5></label>
                 <div class="flex flex-cols-3">
-                <input type="text" class="form-control text-center h-10" size="2" placeholder="E(20M)" name="sixl" required>
-                <input type="text" class="form-control text-center h-10" size="2" placeholder="I(30M)" name="sixm" required>
-                <input type="text" class="form-control text-center h-10" size="2" placeholder="E+I(50M)" name="sixn" required>
+                <input type="text" class="form-control font-bold text-black text-center h-10" size="2" placeholder="E(20M)" name="fiven" >
+                <input type="text" class="form-control font-bold text-black text-center h-10" size="2" placeholder="I(30M)" name="fiveo" >
+                <input type="text" class="form-control font-bold text-black text-center h-10" size="2" placeholder="E+I(50M)" name="fivep" readonly>
                 </div>
             </div>
             <div class="form-group ">
                 <label ><h5 class="text-xl text-center">SA-2</h5></label>
                 <div class="flex flex-cols-3">
-                <input type="text" class="form-control text-center h-10" size="2" placeholder="100M" name="sixo" required>
+                <input type="text" class="form-control font-bold text-black text-center h-10" size="2" placeholder="100M" name="fiveq" >
                 
                 </div>
             </div>
             <div class="form-group ">
                 <label ><h5 class="text-xl text-center">S_TOTAL</h5></label>
                 <div class="flex flex-cols-3">
-                <input type="text" class="form-control text-center h-10" size="2" placeholder="S-TOTAL" name="sixp" required>
+                <input type="text" class="form-control font-bold text-black text-center h-10" size="2" placeholder="S-TOTAL" name="fives" readonly>
                 
                 </div>
             </div>
             <div class="form-group ">
                 <label ><h5 class="text-xl text-center">PERCENTAGE</h5></label>
                 <div class="flex flex-cols-3">
-                <input type="text" class="form-control text-center h-10" size="2" placeholder="PERCENTAGE" name="sixq" required>
+                <input type="text" class="form-control font-bold text-black text-center h-10" size="2" placeholder="PERCENTAGE" name="fivez" readonly>
                 
                 </div>
-            </div>
+            </div><br><br>
             
-            <button type="submit" name="submit" class="ml-20 bg-cyan-600 h-10 w-24 hover:bg-red-300 text-xl text-white rounded">Submit</button>
-           <!-- <div class="ml-20 mt-2 bg-violet-400 text-2xl font-semibold p-2 md:p-3 w-40 md:ml-[25%] rounded-md hover:bg-emerald-600  text-zinc-100">
-           <button type="submit" name="submit"  >
-                   ADD
-           </button> -->
+            
+            <button type="submit" name="submit" class="ml-20 bg-cyan-600 h-14 text-black w-28 text-center font-bold  hover:bg-violet-600 text-xl hover:text-white rounded">Submit</button>
+           
            </div> 
         </form>
     </div>

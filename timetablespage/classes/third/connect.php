@@ -10,7 +10,7 @@
 // }
 
 
-   $con=oci_connect("system","sunitha","XE");
+   $con = oci_connect("system","sunitha","XE");
    if(!$con)
    {
       die(oci_parse_error($con));

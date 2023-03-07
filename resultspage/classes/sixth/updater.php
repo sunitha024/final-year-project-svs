@@ -20,8 +20,10 @@ include "connect.php";
           $sixo = $_POST['sixo'];
           $sixp = $_POST['sixp'];
           $sixq = $_POST['sixq'];
+          $sixs = $_POST['sixs'];
+          $sixz = $_POST['sixz'];
        
-       $query = " update sixr set SIXA='$sixa' , SIXB='$sixb' , SIXC='$sixc' , SIXD='$sixd',SIXE='$sixe',SIXF='$sixf',SIXG='$sixg',SIXH='$sixh',SIXI='$sixi', SIXJ='$sixj' ,SIXK='$sixk',SIXL='$sixl',SIXM='$sixm',SIXN='$sixn',SIXO='$sixo',SIXP='$sixp',SIXQ='$sixq' where SIXA='$sixa' " ;
+       $query = " update sixr set SIXA='$sixa' , SIXB='$sixb' , SIXC='$sixc' , SIXD='$sixd',SIXE='$sixe',SIXF='$sixf',SIXG='$sixg',SIXH='$sixh',SIXI='$sixi', SIXJ='$sixj' ,SIXK='$sixk',SIXL='$sixl',SIXM='$sixm',SIXN='$sixn',SIXO='$sixo',SIXP='$sixp',SIXQ='$sixq',SIXS='$sixs',SIXZ='$sixz' where SIXA='$sixa' " ;
        $stmt = oci_parse($con,$query);
        
        oci_execute($stmt);

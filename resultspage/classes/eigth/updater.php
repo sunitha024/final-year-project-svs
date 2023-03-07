@@ -20,8 +20,10 @@ include "connect.php";
           $eigtho = $_POST['eigtho'];
           $eigthp = $_POST['eigthp'];
           $eigthq = $_POST['eigthq'];
+          $eigths = $_POST['eigths'];
+          $eigthz = $_POST['eigthz'];
        
-       $query = " update eigthr set EIGTHA='$eigtha' , EIGTHB='$eigthb' , EIGTHC='$eigthc' , EIGTHD='$eigthd',EIGTHE='$eigthe',EIGTHF='$eigthf',EIGTHG='$eigthg',EIGTHH='$eigthh',EIGTHI='$eigthi', EIGTHJ='$eigthj' ,EIGTHK='$eigthk',EIGTHL='$eigthl',EIGTHM='$eigthm',EIGTHN='$eigthn',EIGTHO='$eigtho',EIGTHP='$eigthp',EIGTHQ='$eigthq' where EIGTHA='$eigtha' " ;
+       $query = " update eigthr set EIGTHA='$eigtha' , EIGTHB='$eigthb' , EIGTHC='$eigthc' , EIGTHD='$eigthd',EIGTHE='$eigthe',EIGTHF='$eigthf',EIGTHG='$eigthg',EIGTHH='$eigthh',EIGTHI='$eigthi', EIGTHJ='$eigthj' ,EIGTHK='$eigthk',EIGTHL='$eigthl',EIGTHM='$eigthm',EIGTHN='$eigthn',EIGTHO='$eigtho',EIGTHP='$eigthp',EIGTHQ='$eigthq',EIGTHS='$eigths',EIGTHZ='$eigthz' where EIGTHA='$eigtha' " ;
        $stmt = oci_parse($con,$query);
        
        oci_execute($stmt);

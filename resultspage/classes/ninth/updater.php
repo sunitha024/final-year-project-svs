@@ -20,8 +20,10 @@ include "connect.php";
           $nineo = $_POST['nineo'];
           $ninep = $_POST['ninep'];
           $nineq = $_POST['nineq'];
+          $nines = $_POST['nines'];
+          $ninez = $_POST['ninez'];
        
-       $query = " update niner set NINEA='$ninea' , NINEB='$nineb' , NINEC='$ninec' , NINED='$nined',NINEE='$ninee',NINEF='$ninef',NINEG='$nineg',NINEH='$nineh',NINEI='$ninei', NINEJ='$ninej' ,NINEK='$ninek',NINEL='$ninel',NINEM='$ninem',NINEN='$ninen',NINEO='$nineo',NINEP='$ninep',NINEQ='$nineq' where NINEA='$ninea' " ;
+       $query = " update niner set NINEA='$ninea' , NINEB='$nineb' , NINEC='$ninec' , NINED='$nined',NINEE='$ninee',NINEF='$ninef',NINEG='$nineg',NINEH='$nineh',NINEI='$ninei', NINEJ='$ninej' ,NINEK='$ninek',NINEL='$ninel',NINEM='$ninem',NINEN='$ninen',NINEO='$nineo',NINEP='$ninep',NINEQ='$nineq',NINES='$nines',NINEZ='$ninez' where NINEA='$ninea' " ;
        $stmt = oci_parse($con,$query);
        
        oci_execute($stmt);

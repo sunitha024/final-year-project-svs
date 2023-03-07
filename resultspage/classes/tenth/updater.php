@@ -20,8 +20,11 @@ include "connect.php";
           $teno = $_POST['teno'];
           $tenp = $_POST['tenp'];
           $tenq = $_POST['tenq'];
+          $tens = $_POST['tens'];
+          $tenz = $_POST['tenz'];
+          
        
-       $query = " update tenr set TENA='$tena' , TENB='$tenb' , TENC='$tenc' , TEND='$tend',TENE='$tene',TENF='$tenf',TENG='$teng',TENH='$tenh',TENI='$teni', TENJ='$tenj' ,TENK='$tenk',TENL='$tenl',TENM='$tenm',TENN='$tenn',TENO='$teno',TENP='$tenp',TENQ='$tenq' where TENA='$tena' " ;
+       $query = " update tenr set TENA='$tena' , TENB='$tenb' , TENC='$tenc' , TEND='$tend',TENE='$tene',TENF='$tenf',TENG='$teng',TENH='$tenh',TENI='$teni', TENJ='$tenj' ,TENK='$tenk',TENL='$tenl',TENM='$tenm',TENN='$tenn',TENO='$teno',TENP='$tenp',TENQ='$tenq',TENS='$tens',TENZ='$tenz' where TENA='$tena'  " ;
        $stmt = oci_parse($con,$query);
        
        oci_execute($stmt);

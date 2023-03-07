@@ -97,7 +97,7 @@ if (($row = oci_fetch_array($stmt))) {
                     ?>
                 </select>
             </div>
-                  <div class="form-group">
+                  <div class="form-group after:content-['*'] after:ml-0.5 after:text-red-500">
                       <label>
                           <h5 class="text-xl">9-9:45</h5>
                       </label>
